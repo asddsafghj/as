@@ -17,7 +17,7 @@ local day = 86400
 local week = 604800
 local MaxChar = 15
 local NumberReturn = 12
-local iNaji = 170146015
+local iNaji = 123456789
 http.TIMEOUT = 10
 notify.init("Telegram updates")
 local senspost = {
@@ -360,10 +360,10 @@ local load_config = function()
   return config
 end
 local load_help = function()
-  local f = io.open("./Help/help.lua", "r")
+  local f = io.open("help.lua", "r")
   	if f then
 	f:close()
-	local help = loadfile("./Help/help.lua")()
+	local help = loadfile("help.lua")()
 	return help
 	else
 	return false
@@ -428,7 +428,7 @@ if not database:get("setnumbergp") then
   setnumbergp()
   database:setex("setnumbergp", 5 * hour, true)
 end
-  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n>>>>>>> Confirmed License ( By senator ) <<<<<<<\n\027[00m")
+  print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n>>>>>>> Confirmed License ( By Naji ) <<<<<<<\n\027[00m")
 
 
 local is_Naji = function(msg)
@@ -5627,7 +5627,7 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
           database:del("bot:payping")
           database:set(hash, paylink)
           if database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "• *payping* link has been *Saved* !", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• *PayPing* link has been *Saved* !", 1, "md")
           else
             send(msg.chat_id_, msg.id_, 1, "• لینک پرداخت پی پینگ ثبت شد !", 1, "md")
           end
@@ -5936,11 +5936,11 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
           print("\027[" .. color.white[1] .. ";" .. color.magenta[2] .. "m>>> Lock Cmd Is Active In This Group <<<\027[00m")
           return false
         end
-        if is_momod(msg.sender_user_id_, msg.chat_id_) and (text:match("^[Hh]elp$") or text:match("^راهنما$")) then
+        if is_momod(msg.sender_user_id_, msg.chat_id_) and (text:match("^[Pp]ing$") or text:match("^پینگ$")) then
           if database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "• 📝راهنمای ربات زئوس\n\n🚏دستورات قفلی \n\n💈قفل\n\n🚏حالت سختگیرانه-گروه-حالت عدم جواب -خودکار-لینک-اسپم-صفحات اینترنتی-تگ-هشتگ-فروارد-پست تکراری-ربات-ویرایش پیام-سنجاق پیام-دکمه شیشه ای-نوشتار فارسی-نوشتار انگلیسی-مدل نشانه گذاری-پست-بازی-ورود عضو-سرویس تلگرام-فلود-فیلم-عکس-ویس-موزیک-فیلم سلفی-فایل-استیکر-مخاطب-موقعیت مکانی\n\n💈💈برای استفاده کردن جلوی دستور قفل یکی از قفل های بالارو جا گذاری کنید و بفرستید مثل قفل لینک\n\n💈بازکردن\n\n🚏حالت سختگیرانه-گروه-حالت عدم جواب -خودکار-لینک-اسپم-صفحات اینترنتی-تگ-هشتگ-فروارد-پست تکراری-ربات-ویرایش پیام-سنجاق پیام-دکمه شیشه ای-نوشتار فارسی-نوشتار انگلیسی-مدل نشانه گذاری-پست-بازی-ورود عضو-سرویس تلگرام-فلودمتن-فیلم-عکس-ویس-موزیک-فیلم سلفی-فایل-استیکر-مخاطب-موقعیت مکانی\n\n💈💈برای بازکردن قفل ها جلوی دستور بازکردن یکی از قفل های بالارو جا گذاری کنید و بفرستید مثل بازکردن لینک\n\n🚏برای تنظیم فلود \n\n💈تنظیم فلود (مقدار فلود شما)\n\n🚏برای تنظیم اسپم \n\n💈تنظیم اسپم (مقدار اسپم)\n\n🚏تنظیم لینک گروه\n\n💈تنظیم لینک\n\n🚏برای تنظیم قوانین گروه \n\n💈تنظیم قوانین\n\n🚏برای پاکسازی پیام ها بصورت انبوه دستوراز این دستور هر 9ساعت یک بار میتونید استفاده کنید \n\n💈پاکسازی پیام ها\n\n🚏برای پاکسازی پیام ها بصورت تعدادی \n\n💈پاکسازی (تعداد پیام ها از 1تا100)\n\n \n\n🚏برای پاکسازی ربات های گروه\n\n💈پاکسازی ربات\n\n🚏برای پاکسازی و دعوت افراد مسدود گروه \n\n💈پاکسازی مسدودیت گروه\n\n🚏برای اخراج افراد\n\n💈اخراج\n\n🚏برای اخطار دادن به یک عضو \n\n💈اخطار\n\n🚏برای بی صدا کردن عضو \n\n💈بی صدا\n\n🚏برای در اوردن از حالت بی صدا \n\n💈حذف بی صدا\n\nب🚏رای ارتقای مقام \n\n💈ارتقا مقام\n\n🚏برای عضو ویژه کردن \n\n💈عضو ویژه\n\n🚏برای عزل مقام \n\n💈عزل مقام \n\n🚏برای عزل عضو ویژه \n\n💈حذف از عضو ویژه\n\n🚏برای ارسال مشکل به پشتیبانی ربات\n\n💈درخواست پشتیبانی\n\n🚏برای دریافت لینک گروه پشتیبانی \n\n💈دریافت پشتیبانی\n\n🚏برای دریافت پنل شیشه ای \n\n💈فهرست\n\n🚏برای حذف کلیه پیام های یک شخص\n\n💈حذف کلی پیام\n\n🚏برای حذف یک پیام \n\n💈حذف\n\n 💈💈برای دستورات اخراج -بی صدا و اخطار بایستی ریپلای کنید یا ایدی یوزری  یا ایدی عددی شخص را جلوی دستور بزارید \n\n کانال پشتیبانی زئوس بات: \n\n @Zeusbotsupport", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• Bot is Now *Online* !", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "• 📝راهنمای ربات زئوس\n\n🚏دستورات قفلی \n\n💈قفل\n\n🚏حالت سختگیرانه-گروه-حالت عدم جواب -خودکار-لینک-اسپم-صفحات اینترنتی-تگ-هشتگ-فروارد-پست تکراری-ربات-ویرایش پیام-سنجاق پیام-دکمه شیشه ای-نوشتار فارسی-نوشتار انگلیسی-مدل نشانه گذاری-پست-بازی-ورود عضو-سرویس تلگرام-فلود-فیلم-عکس-ویس-موزیک-فیلم سلفی-فایل-استیکر-مخاطب-موقعیت مکانی\n\n💈💈برای استفاده کردن جلوی دستور قفل یکی از قفل های بالارو جا گذاری کنید و بفرستید مثل قفل لینک\n\n💈بازکردن\n\n🚏حالت سختگیرانه-گروه-حالت عدم جواب -خودکار-لینک-اسپم-صفحات اینترنتی-تگ-هشتگ-فروارد-پست تکراری-ربات-ویرایش پیام-سنجاق پیام-دکمه شیشه ای-نوشتار فارسی-نوشتار انگلیسی-مدل نشانه گذاری-پست-بازی-ورود عضو-سرویس تلگرام-فلودمتن-فیلم-عکس-ویس-موزیک-فیلم سلفی-فایل-استیکر-مخاطب-موقعیت مکانی\n\n💈💈برای بازکردن قفل ها جلوی دستور بازکردن یکی از قفل های بالارو جا گذاری کنید و بفرستید مثل بازکردن لینک\n\n🚏برای تنظیم فلود \n\n💈تنظیم فلود (مقدار فلود شما)\n\n🚏برای تنظیم اسپم \n\n💈تنظیم اسپم (مقدار اسپم)\n\n🚏تنظیم لینک گروه\n\n💈تنظیم لینک\n\n🚏برای تنظیم قوانین گروه \n\n💈تنظیم قوانین\n\n🚏برای پاکسازی پیام ها بصورت انبوه دستوراز این دستور هر 9ساعت یک بار میتونید استفاده کنید \n\n💈پاکسازی پیام ها\n\n🚏برای پاکسازی پیام ها بصورت تعدادی \n\n💈پاکسازی (تعداد پیام ها از 1تا100)\n\n \n\n🚏برای پاکسازی ربات های گروه\n\n💈پاکسازی ربات\n\n🚏برای پاکسازی و دعوت افراد مسدود گروه \n\n💈پاکسازی مسدودیت گروه\n\n🚏برای اخراج افراد\n\n💈اخراج\n\n🚏برای اخطار دادن به یک عضو \n\n💈اخطار\n\n🚏برای بی صدا کردن عضو \n\n💈بی صدا\n\n🚏برای در اوردن از حالت بی صدا \n\n💈حذف بی صدا\n\nب🚏رای ارتقای مقام \n\n💈ارتقا مقام\n\n🚏برای عضو ویژه کردن \n\n💈عضو ویژه\n\n🚏برای عزل مقام \n\n💈عزل مقام \n\n🚏برای عزل عضو ویژه \n\n💈حذف از عضو ویژه\n\n🚏برای ارسال مشکل به پشتیبانی ربات\n\n💈درخواست پشتیبانی\n\n🚏برای دریافت لینک گروه پشتیبانی \n\n💈دریافت پشتیبانی\n\n🚏برای دریافت پنل شیشه ای \n\n💈فهرست\n\n🚏برای حذف کلیه پیام های یک شخص\n\n💈حذف کلی پیام\n\n🚏برای حذف یک پیام \n\n💈حذف\n\n 💈💈برای دستورات اخراج -بی صدا و اخطار بایستی ریپلای کنید یا ایدی یوزری  یا ایدی عددی شخص را جلوی دستور بزارید \n\n کانال پشتیبانی زئوس بات: \n\n @Zeusbotsupport ", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• ربات هم اکنون آنلاین میباشد !", 1, "md")
           end
         end
         if is_admin(msg.sender_user_id_) and idf:match("-100(%d+)") and (text:match("^[Ll]eave$") or text:match("^ترک گروه$")) then
@@ -12603,44 +12603,44 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and (text:match("^[Ss]ettings") or text:match("^تنظیمات")) and check_user_channel(msg) then
           if database:get("bot:muteall" .. msg.chat_id_) then
-            mute_all = "✅"
+            mute_all = "فعال"
           else
-            mute_all = "❎"
+            mute_all = "غیرفعال"
           end
           if database:get("bot:text:mute" .. msg.chat_id_) then
-            mute_text = "✅"
+            mute_text = "فعال"
           else
-            mute_text = "❎"
+            mute_text = "غیرفعال"
           end
           if database:get("bot:photo:mute" .. msg.chat_id_) then
-            mute_photo = "✅"
+            mute_photo = "فعال"
           else
-            mute_photo = "❎"
+            mute_photo = "غیرفعال"
           end
           if database:get("bot:video:mute" .. msg.chat_id_) then
-            mute_video = "✅"
+            mute_video = "فعال"
           else
-            mute_video = "❎"
+            mute_video = "غیرفعال"
           end
           if database:get("bot:selfvideo:mute" .. msg.chat_id_) then
-            mute_selfvideo = "✅"
+            mute_selfvideo = "فعال"
           else
-            mute_selfvideo = "❎"
+            mute_selfvideo = "غیرفعال"
           end
           if database:get("bot:gifs:mute" .. msg.chat_id_) then
-            mute_gifs = "✅"
+            mute_gifs = "فعال"
           else
-            mute_gifs = "❎"
+            mute_gifs = "غیرفعال"
           end
           if database:get("anti-flood:" .. msg.chat_id_) then
-            mute_flood = "✅"
+            mute_flood = "فعال"
           else
-            mute_flood = "❎"
+            mute_flood = "غیرفعال"
           end
           if database:get("bot:muteall:Time" .. msg.chat_id_) then
-            auto_lock = "✅"
+            auto_lock = "فعال"
           else
-            auto_lock = "❎"
+            auto_lock = "غیرفعال"
           end
           if not database:get("flood:max:" .. msg.chat_id_) then
             flood_m = 5
@@ -12672,139 +12672,139 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
             warnstatus = "بی صدا"
           end
           if database:get("bot:music:mute" .. msg.chat_id_) then
-            mute_music = "✅"
+            mute_music = "فعال"
           else
-            mute_music = "❎"
+            mute_music = "غیرفعال"
           end
           if database:get("bot:bots:mute" .. msg.chat_id_) then
-            mute_bots = "✅"
+            mute_bots = "فعال"
           else
-            mute_bots = "❎"
+            mute_bots = "غیرفعال"
           end
           if database:get("bot:duplipost:mute" .. msg.chat_id_) then
-            duplipost = "✅"
+            duplipost = "فعال"
           else
-            duplipost = "❎"
+            duplipost = "غیرفعال"
           end
           if database:get("bot:member:lock" .. msg.chat_id_) then
-            member = "✅"
+            member = "فعال"
           else
-            member = "❎"
+            member = "غیرفعال"
           end
           if database:get("bot:inline:mute" .. msg.chat_id_) then
-            mute_in = "✅"
+            mute_in = "فعال"
           else
-            mute_in = "❎"
+            mute_in = "غیرفعال"
           end
           if database:get("bot:cmds" .. msg.chat_id_) then
-            mute_cmd = "✅"
+            mute_cmd = "فعال"
           else
-            mute_cmd = "❎"
+            mute_cmd = "غیرفعال"
           end
           if database:get("bot:voice:mute" .. msg.chat_id_) then
-            mute_voice = "✅"
+            mute_voice = "فعال"
           else
-            mute_voice = "❎"
+            mute_voice = "غیرفعال"
           end
           if database:get("editmsg" .. msg.chat_id_) then
-            mute_edit = "✅"
+            mute_edit = "فعال"
           else
-            mute_edit = "❎"
+            mute_edit = "غیرفعال"
           end
           if database:get("bot:links:mute" .. msg.chat_id_) then
-            mute_links = "✅"
+            mute_links = "فعال"
           else
-            mute_links = "❎"
+            mute_links = "غیرفعال"
           end
           if database:get("bot:pin:mute" .. msg.chat_id_) then
-            lock_pin = "✅"
+            lock_pin = "فعال"
           else
-            lock_pin = "❎"
+            lock_pin = "غیرفعال"
           end
           if database:get("bot:sticker:mute" .. msg.chat_id_) then
-            lock_sticker = "✅"
+            lock_sticker = "فعال"
           else
-            lock_sticker = "❎"
+            lock_sticker = "غیرفعال"
           end
           if database:get("bot:tgservice:mute" .. msg.chat_id_) then
-            lock_tgservice = "✅"
+            lock_tgservice = "فعال"
           else
-            lock_tgservice = "❎"
+            lock_tgservice = "غیرفعال"
           end
           if database:get("bot:webpage:mute" .. msg.chat_id_) then
-            lock_wp = "✅"
+            lock_wp = "فعال"
           else
-            lock_wp = "❎"
+            lock_wp = "غیرفعال"
           end
           if database:get("bot:strict" .. msg.chat_id_) then
-            strict = "✅"
+            strict = "فعال"
           else
-            strict = "❎"
+            strict = "غیرفعال"
           end
           if database:get("bot:hashtag:mute" .. msg.chat_id_) then
-            lock_htag = "✅"
+            lock_htag = "فعال"
           else
-            lock_htag = "❎"
+            lock_htag = "غیرفعال"
           end
           if database:get("tags:lock" .. msg.chat_id_) then
-            lock_tag = "✅"
+            lock_tag = "فعال"
           else
-            lock_tag = "❎"
+            lock_tag = "غیرفعال"
           end
           if database:get("bot:location:mute" .. msg.chat_id_) then
-            lock_location = "✅"
+            lock_location = "فعال"
           else
-            lock_location = "❎"
+            lock_location = "غیرفعال"
           end
           if database:get("bot:contact:mute" .. msg.chat_id_) then
-            lock_contact = "✅"
+            lock_contact = "فعال"
           else
-            lock_contact = "❎"
+            lock_contact = "غیرفعال"
           end
           if database:get("bot:english:mute" .. msg.chat_id_) then
-            lock_english = "✅"
+            lock_english = "فعال"
           else
-            lock_english = "❎"
+            lock_english = "غیرفعال"
           end
           if database:get("bot:arabic:mute" .. msg.chat_id_) then
-            lock_arabic = "✅"
+            lock_arabic = "فعال"
           else
-            lock_arabic = "❎"
+            lock_arabic = "غیرفعال"
           end
           if database:get("bot:forward:mute" .. msg.chat_id_) then
-            lock_forward = "✅"
+            lock_forward = "فعال"
           else
-            lock_forward = "❎"
+            lock_forward = "غیرفعال"
           end
           if database:get("bot:document:mute" .. msg.chat_id_) then
-            lock_file = "✅"
+            lock_file = "فعال"
           else
-            lock_file = "❎"
+            lock_file = "غیرفعال"
           end
           if database:get("markdown:lock" .. msg.chat_id_) then
-            markdown = "✅"
+            markdown = "فعال"
           else
-            markdown = "❎"
+            markdown = "غیرفعال"
           end
           if database:get("Game:lock" .. msg.chat_id_) then
-            game = "✅"
+            game = "فعال"
           else
-            game = "❎"
+            game = "غیرفعال"
           end
           if database:get("bot:spam:mute" .. msg.chat_id_) then
-            lock_spam = "✅"
+            lock_spam = "فعال"
           else
-            lock_spam = "❎"
+            lock_spam = "غیرفعال"
           end
           if database:get("post:lock" .. msg.chat_id_) then
-            post = "✅"
+            post = "فعال"
           else
-            post = "❎"
+            post = "غیرفعال"
           end
           if database:get("bot:welcome" .. msg.chat_id_) then
-            send_welcome = "✅"
+            send_welcome = "فعال"
           else
-            send_welcome = "❎"
+            send_welcome = "غیرفعال"
           end
           local TXTFA = "•• تنظیمات گروه :\n\n" .. " ••  حالت های گروه :\n\n" .. "• حالت سختگیرانه : " .. strict .. "\n" .. "______________________\n" .. "• حالت قفل کلی گروه : " .. mute_all .. "\n" .. "______________________\n" .. "• حالت عدم جواب : " .. mute_cmd .. "\n" .. "______________________\n" .. "• حالت قفل خودکار : " .. auto_lock .. "\n" .. "______________________\n" .. "••  قفل های اصلی :\n\n" .. "• قفل اسپم : " .. lock_spam .. "\n" .. "______________________\n" .. "• قفل لینک : " .. mute_links .. "\n" .. "______________________\n" .. "• قفل آدرس اینترنتی :  " .. lock_wp .. "\n" .. "______________________\n" .. "• قفل تگ (@) : " .. lock_tag .. "\n" .. "______________________\n" .. "• قفل هشتگ (#) : " .. lock_htag .. "\n" .. "______________________\n" .. "• قفل فروارد : " .. lock_forward .. "\n" .. "______________________\n" .. "• قفل پست تکراری : " .. duplipost .. "\n" .. "______________________\n" .. "• قفل ورود ربات :  " .. mute_bots .. "\n" .. "______________________\n" .. "• قفل ویرایش پیام :  " .. mute_edit .. "\n" .. "______________________\n" .. "• قفل سنجاق پیام : " .. lock_pin .. "\n" .. "______________________\n" .. "• قفل دکمه شیشه ایی : " .. mute_in .. "\n" .. "______________________\n" .. "• قفل نوشتار فارسی :  " .. lock_arabic .. "\n" .. "______________________\n" .. "• قفل نوشتار انگلیسی : " .. lock_english .. "\n" .. "______________________\n" .. "• قفل مدل نشانه گذاری : " .. markdown .. "\n" .. "______________________\n" .. "• قفل پست : " .. post .. "\n" .. "______________________\n" .. "• قفل بازی : " .. game .. "\n" .. "______________________\n" .. "• قفل ورود عضو : " .. member .. "\n" .. "______________________\n" .. "• قفل سرویس تلگرام : " .. lock_tgservice .. "\n" .. "______________________\n" .. "• قفل فلود : " .. mute_flood .. "\n" .. "______________________\n" .. "• وضعیت فلود : " .. floodstatus .. "\n" .. "______________________\n" .. "• حساسیت فلود : [ " .. flood_m .. " ]\n" .. "______________________\n" .. "• وضعیت اخطار : " .. warnstatus .. "\n" .. "______________________\n" .. "• تعداد دفعات اخطار : [ " .. sencwarn .. " ]\n" .. "______________________\n" .. "️• حساسیت اسپم : [ " .. spam_c .. [[
  ]
@@ -14649,12 +14649,12 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
           end
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") then
-          if (text:match("^asd$") or text:match("^این دستور پاک شد$")) and check_user_channel(msg) then
+          if (text:match("^[Hh]elp$") or text:match("^راهنما$")) and check_user_channel(msg) then
             local helpen = _help and _help.helpen
             local helpfa = _help and _help.helpfa
             local helptime = 60
             local help_en = helpen and helpen.help or "!Inaccessible!"
-            local help_fa = helpfa and helpen.help or "قابل دسترسی نمیباشد"
+            local help_fa = helpfa and helpfa.help or "قابل دسترسی نمیباشد"
             database:setex("helptime:" .. msg.chat_id_, helptime, true)
             if database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, help_en, 1, "md")
@@ -14662,7 +14662,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               send(msg.chat_id_, msg.id_, 1, help_fa, 1, "md")
             end
           end
-          --[[if database:get("helptime:" .. msg.chat_id_) and is_momod(msg.sender_user_id_, msg.chat_id_) then
+        if database:get("helptime:" .. msg.chat_id_) and is_momod(msg.sender_user_id_, msg.chat_id_) then
             if database:get("lang:gp:" .. msg.chat_id_) then
               local helpen = _help.helpen
               local helplock = helpen.helplock
@@ -14675,6 +14675,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               local helppanel = helpen.helppanel
               local helpclean = helpen.helpclean
               local helpwarn = helpen.helpwarn
+			  local helpfun = helpen.helpfun
               if text:match("^1$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpvaziat, 1, "md")
@@ -14705,6 +14706,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               elseif text:match("^10$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpwarn, 1, "md")
+			  elseif text:match("^11$") then
+                database:del("helptime:" .. msg.chat_id_)
+                send_large_msg(msg.chat_id_, msg.id_, 1, helpfun, 1, "md")
               elseif text:match("^0$") then
                 send_large_msg(msg.chat_id_, msg.id_, 1, "• The Operation was *Canceled* !", 1, "md")
                 database:del("helptime:" .. msg.chat_id_)
@@ -14725,6 +14729,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               local helppanel = helpfa.helppanel
               local helpclean = helpfa.helpclean
               local helpwarn = helpfa.helpwarn
+			  local helpfun = helpfa.helpfun
               if text:match("^1$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpvaziat, 1, "md")
@@ -14755,6 +14760,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               elseif text:match("^10$") then
                 database:del("helptime:" .. msg.chat_id_)
                 send_large_msg(msg.chat_id_, msg.id_, 1, helpwarn, 1, "md")
+			  elseif text:match("^11$") then
+                database:del("helptime:" .. msg.chat_id_)
+                send_large_msg(msg.chat_id_, msg.id_, 1, helpfun, 1, "md")
               elseif text:match("^0$") then
                 send(msg.chat_id_, msg.id_, 1, "• عملیات لغو گردید !", 1, "md")
                 database:del("helptime:" .. msg.chat_id_)
@@ -14762,7 +14770,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
                 send(msg.chat_id_, msg.id_, 1, "• شماره مورد نظر شما در لیست موجود نمیباشد !", 1, "md")
               end
             end
-          end]]
+          end
         end
         if is_sudo(msg) and (text:match("^[Ss]etpayping$") or text:match("^تنظیم پی پینگ$")) then
           if database:get("lang:gp:" .. msg.chat_id_) then
@@ -14955,13 +14963,13 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
         end
         if is_leader(msg) and (text:match("^[Uu]pdate$") or text:match("^بروزرسانی$")) then
           if not database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط zeus می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @Zeusbotsupport", 1,"md")
+            send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط ناجی می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @i\\_Advertiser", 1,"md")
           else
-            send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'zeus'_\n_Check out this Channel for updates : @Zeusbotsupport", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'Naji'_\n_Check out this Channel for updates :_ @i\\_Advertiser", 1, "md")
           end
         end
         if is_leader(msg) and (text:match("^[Vv]ersion$") or text:match("^نسخه فعلی$")) then
-          local LastVer = "zeus"
+          local LastVer = "Naji .Ver"
           if LastVer then
             if not database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• نسخه فعلی سورس " .. LastVer .. " میباشد !", 1, "md")
@@ -15253,9 +15261,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
         end
         if is_Naji(msg) and text:match("^[Ww]hat[Ss]ource$") then
           if database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "》 * Source v2*\n\n》 *Created on December 2016*\n\n》 *By* : *zeus* \n\n》 *Developer* :\n\n • tohi\n\n  *Cracked By tohi*", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "》 *ESET Nod 32 Source v4.1*\n\n》 *Created on December 2016*\n\n》 *By* : *ESET TEAM* \n\n》 *Developer* :\n\n • Sajjad Momen\n\n  *Cracked By Naji*", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "》 سورس ورژن 2 \n》 پایه گذاری شده در دی ماه ۱۳۹۵ \n》 توسط : * @Zeusbotsupport* \n\n》 توسعه دهنده :\n\n • tohi  • @Zeusbotsupport\n\nاپن شده توسط tohi", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "》  ایسِت نود 32 سورس ورژن 4.1 \n》 پایه گذاری شده در دی ماه ۱۳۹۵ \n》 توسط : *ESET TEAM* \n\n》 توسعه دهنده :\n\n • سجاد مومن  • @EndlessLine\n\nاپن شده توسط ناجی", 1, "md")
           end
         end
         if is_Naji(msg) and text:match("^[Ii]nfo$") then
@@ -15263,9 +15271,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
 
           if is_leader(msg) and text:match("^[Ff]orceupdate$") then
             if not database:get("lang:gp:" .. msg.chat_id_) then
-              send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط tohi می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @Zeusbotsupport", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط ناجی می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @i\\_Advertiser", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'tohi'_\n_Check out this Channel for updates :_ @Zeusbotsupport", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'Naji'_\n_Check out this Channel for updates :_ @i\\_Advertiser", 1, "md")
             end
           end
           if is_leader(msg) and text:match("^[Rr]estart$") then

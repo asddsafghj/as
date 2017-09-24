@@ -15263,7 +15263,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
           if database:get("lang:gp:" .. msg.chat_id_) then
             send(msg.chat_id_, msg.id_, 1, "》 *Source v2*\n\n》 *Created on December 2016*\n\n》 *By* : *zeus bot* \n\n》 *Developer* :\n\n • @sudo_senator\n\n ", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "》  سورس ورژن 2 \n》 پایه گذاری شده در دی ماه ۱۳۹۵ \n》 توسط : *zeus bot* \n\n》 توسعه دهنده :\n\n • @sudo_senator  • , "md")
+            send(msg.chat_id_, msg.id_, 1, "》  سورس ورژن 2 \n》 پایه گذاری شده در دی ماه ۱۳۹۵ \n》 توسط : *zeus bot* \n\n》 توسعه دهنده :\n\n • @sudo_senator  • ", 1, "md")
           end
         end
         if is_Naji(msg) and text:match("^[Ii]nfo$") then

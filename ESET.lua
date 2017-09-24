@@ -14801,7 +14801,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
           end
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and (text:match("^[Tt]ime$") or text:match("^زمان$")) and check_user_channel(msg) then
-          local url, res = https.request("https://irapi.ir/time")
+          local url, res = https.request("https://irapi.ir/time/")
           if res == 200 then
             local jdat = json.decode(url)
             if jdat.FAtime and jdat.FAdate and jdat.ENtime and jdat.ENdate then

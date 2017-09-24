@@ -28,6 +28,8 @@ help = [[
 `11` . `بخش دستورات تفریحی و عمومی`
 
 `0` . `لغو عملیات`
+            
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
 
 > `برای دریافت راهنمای بخش مورد نظر کافیست شماره آن را ارسال نمایید` !
 ]]
@@ -61,7 +63,9 @@ helplock = [[
 - `پست تکراری`
 - `بازی`
 - `سنجاق پیام`
-- `ورود عضو`
+- `ورود عضو`     
+            
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
     ‌‌
 ]]
 ,
@@ -86,6 +90,8 @@ helpmedia = [[
 - `متن`
 - `استیکر`
 - `موقعیت مکانی`
+            
+  کانال پشتیبانی زئوس بات : @Zeusbotsupport 
 ]]
 ,
 helpsetlink = [[
@@ -96,6 +102,8 @@ helpsetlink = [[
 سپس لینک گروه را داخل خود گروه ارسال کنید تا ثبت شود !
 
 پس از ثبت شدن میتوانید با دستور `لینک گروه` آن را هر زمان که خواستید دریافت کنید !
+           
+کانال پشتیبانی زئوس بات : @Zeusbotsupport 
     ‌‌‌‌
 ]]
 ,
@@ -136,6 +144,8 @@ helpprodemo = [[
 این روش با منشن انجام میشود و میتوانید پروموت کنید
 
 `ارتقا مقام "منشن"`
+            
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
     ‌‌
 ]]
 ,
@@ -170,7 +180,9 @@ helpjanebi = [[
 برای سنجاق کردن یک پیام توسط ربات میتوانید پیام مورد نظر را ریپلای کنید سپس دستور (`سنجاق کن`) را ارسال کنید
 برای خارج کردن پیام از حالت سنجاق میتوانید از دستور ( `حذف سنجاق` ) استفاده کنید
 برای مجدد سنجاق کردن پیام سابق میتوانید از دستور ( `سنجاق مجدد`) استفاده نمایید
-    ‌‌‌‌
+
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
+   ‌‌‌‌
 ]]
 ,
 helpspamflood = [[
@@ -208,6 +220,8 @@ helpspamflood = [[
 حساسیت آن هم به حد پیام تکراری قابل تنظیم است !
 
 تنظیم فلود `[ 1 - به بالا ]`
+            
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
     ‌‌‌‌
 ]]
 ,
@@ -261,7 +275,10 @@ helpvaziat = [[
 غیرفعال سازی :
 
 `بازکردن حالت عدم جواب`
-    ‌‌‌‌
+
+کانال پشتیبانی زئوس بات : @Zeusbotsupport 
+            
+     ‌‌‌‌
 ]]
 ,
 helppanel = [[
@@ -294,7 +311,10 @@ helppanel = [[
 > نمايش ندادن پيام هاي اديت شده
 
 `نمایش ادیت غیرفعال`
-    ‌‌‌‌
+   
+   کانال پشتیبانی زئوس بات : @Zeusbotsupport          
+            
+       ‌‌‌‌
 ]]
 ,
 helpclean = [[
@@ -327,6 +347,9 @@ helpclean = [[
 > برای پاک کردن تمام پيام هاي گروه :
 
 `پاکسازی پیام ها`
+            
+            
+ کانال پشتیبانی زئوس بات : @Zeusbotsupport 
 ]]
 ,
 helpwarn = [[
@@ -358,6 +381,8 @@ helpwarn = [[
 • اخراج شدن در صورت اتمام دفعات اخطار
 
 `وضعیت اخطار اخراج`
+            
+کانال پشتیبانی زئوس بات : @Zeusbotsupport 
 ]]
 ,
 helpfun = [[
@@ -440,6 +465,8 @@ id
 
 دستور انگلیسی :
 Me
+            
+  کانال پشتیبانی زئوس بات : @Zeusbotsupport
 ]]
 }
 ,
@@ -461,7 +488,7 @@ help = [[
 `10-` Section Warnings
 `11-` Fun Capability & Public Commands Guide
 `0-` Cancel operation
-
+Zeus Robot Channel: @Zeusbotsupport
 > To get to the * FAQ * section, simply send its * Number *!
 ]]
 ,
@@ -498,6 +525,7 @@ You can active bot locks withe `lock` Pattern and You can inactive bot locks wit
 - `Game`
 - `Inline`
 - `Member`
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpmedia = [[
@@ -524,6 +552,7 @@ You can active Media lock withe `lock` Pattern and You can inactive Media lock w
 - `File`
 - `Contact`
 - `Sticker`
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpsetlink = [[
@@ -534,6 +563,8 @@ Enter the command `Setlink`  !
 Then link the group to be *Recorded* within the group itSelf  !
 
 Once registered with the command `Link` can get it whenever you want !
+ 
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpprodemo = [[
@@ -566,6 +597,8 @@ Dismissal of the above steps is enough for one person only with the difference t
 * Example *
 
 `Promote 'Metion'`
+
+ Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpjanebi = [[
@@ -599,6 +632,8 @@ To get to see your profile, you can use the following command
 To pin down a message via robot can send messages to the `Pin` Ryplay then ordered !
 To remove the message from the pin `Unpin` can use the command !
 To re-pin the former message, you can use the command `Repin` !
+            
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpspamflood = [[
@@ -634,6 +669,8 @@ If he burst start *Sending messages* , all messages will be deleted from the gro
 Its *Sensitivity* is adjustable to a duplicate message!
 
 `Setflood [1 - Up]`
+  
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpvaziat = [[
@@ -678,6 +715,8 @@ Some of universal grammar, that is normal users are answered, they will not resp
 
 *Deactivate* :
 `Unlock cmd`
+            
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helppanel = [[
@@ -717,6 +756,8 @@ Pattern :
 
 Pattern :
 `showedit off`
+            
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpclean = [[
@@ -761,6 +802,8 @@ Pattern:
 
 Pattern:
 `Clean members`
+            
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpwarn = [[
@@ -798,6 +841,8 @@ you can send unwarn to users withe sub Pattern and you can send it withe reply
 - Remove user befor Warnings
 * Pattern *:
 `Warnstatus remove`
+        
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 ,
 helpfun = [[
@@ -871,6 +916,8 @@ helpfun = [[
 
 * Pattern *:
 `Me`
+           
+Zeus Robot Channel: @Zeusbotsupport
 ]]
 }
 }

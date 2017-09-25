@@ -405,47 +405,6 @@ helpfun = [[
 دستور فارسی :
 `زمان`
 
->تبديل استيكر به عكس :
-
-•• با استفاده از اين دستور شما مي‌توانيد استیکر خود را به تصویر تبدیل کنید.
-
-دستور فارسی :
-`تبدیل به عکس` ( `ریپلای` )
-
->تبديل عكس به استيكر :
-
-•• با استفاده از اين دستور شما مي‌توانيد تصویر خود را به استیکر تبدیل کنید.
-
-دستور فارسی :
-`تبدیل به استیکر` ( `ریپلای` )
-
->تبديل متن به تصوير متحرك (‌ `گيف` ) :
-
-•• با استفاده از اين دستور شما مي‌توانيد متن خود را به یک فایل تصویری متحرگ یا همان Gif تبدیل کنید.
-
-دستور فارسی :
-ساخت گیف ( `متن` ) 
-
->استیکر عشق ( `Love` ) :
-
-•• با استفاده از این دستور شما میتوانید یک استیکر حاوی دو اسم و یک قلب ایجاد کنید ! این دستور از زبان فارسی پشتیبانی نمی‌کند و شما باید اسم ها را به زبان انگلیسی وارد کنید !
-
-دستور انگلیسی :
-Love اسم اول ، اسم دوم
-
-نمونه دستور انگليسي :
-Love Eset Robot
-
->استیکر آروم باش ( `KeepCalm` ) :
-
-•• با استفاده از این دستور شما میتوانید یک استیکر `KeepCalm` با متن دلخواه ایجاد کنید ! این دستور نیز  همانند استیکر `Love` از زبان فارسی پشتیبانی نمی‌کند و شما باید آن را به صورت انگلیسی وارد کنید.
-
-دستور انگلیسی :
-`Keepcalm` اسم ، رنگ زمینه ، رنگ نوشته ، رنگ تاج ، اندازه
-
-نمونه دستور انگليسي :
-`keepcalm Robot white black black 600`
-
 >شناسه من :
 
 •• با استفاده از این دستور شما میتوانید آیدی عددی حساب کاربری تلگرام خود را دریافت کنید. پاسخ دهی این دستور برای کاربران عادی مبنی بر غیرفعال بودن حالت عدم جواب می‌باشد.
@@ -862,46 +821,6 @@ helpfun = [[
 * Pattern *:
 `Time`
 
-> * Convert Photo To Sticker *
-
-•• * With this command, you can turn your images to stickers *
-
-* Pattern *:
-`To Sticker` ( `On Reply` )
-
-> * Convert Sticker To Photo *
-
-•• * With this command, you can turn your sticker to images *
-
-* Pattern *:
-`To Photo` ( `On Reply` )
-
-> * Convert Text To Gif *
-
-•• * With this command, you can turn your text to the gif *
-
-* Pattern *:
-`Gif` ( `Text` )
-
-> * KeepCalm Sticker *
-
-••  * With this command, you can make keepcalm stickers with Custom text . This command doesn't support in the persian language just as Love Sticker and you must type it English *
-
-* English Command * :
-`Keepcalm Name , BackGround Color , Text Color , Crown Color , Size`
-
-* Pattern *:
-`keepcalm Robot white black black 600`
-
-> * Love Sticker *
-
-•• * With this command, you can make a sticker contains two names and one heart. This command doesnt support persian language the names in English *
-
-* English Command * :
-`Love First Name , Second Name`
-
-* Pattern *:
-`Love Eset Robot`
 
 > * My Id Command *
 

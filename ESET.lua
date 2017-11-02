@@ -593,7 +593,7 @@ end
 
 local is_channelmember = function(msg)
   local var = false
-  channel_id = Api_.get_chat(Bot_Channel)
+  channel_id = Api_.get_chat_member(Bot_Channel)
   if channel_id and channel_id.result and channel_id.result.id then
     result = Api_.get_chat_member(channel_id.result.id, msg.sender_user_id_)
     if result and result.ok and result.result.status ~= "left" then

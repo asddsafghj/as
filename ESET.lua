@@ -797,9 +797,10 @@ function check_user_channel(msg)
   local sayCheck_user_channel = function(msg)
     if not database:sismember("sayCheck_user_channel", msg.id_) then
       if database:get("lang:gp:" .. msg.chat_id_) then
-        send(msg.chat_id_, msg.id_, 1, "\226\128\162 <b>Dear User</b>,Plese Before Operating The Bot , <b>Subscribe</b> To <b>Bot Channel</b> !\nOtherwise, You <b>Will Not</b> Be Able To Command The Bot !\n\194\187 <b>Channel ID</b> : " .. Bot_Channel, 1, "html")
+        send(msg.chat_id_, msg.id_, 1, "• <b>Dear User</b>,Plese Before Operating The Bot , <b>Subscribe</b> To <b>Bot Channel</b> !Otherwise, You <b>Will Not</b> Be Able To Command The Bot !» <b>Channel ID</b> :" .. Bot_Channel ,1, "html")
+
       else
-        send(msg.chat_id_, msg.id_, 1, "\226\128\162 \218\169\216\167\216\177\216\168\216\177 \218\175\216\177\216\167\217\133\219\140 \216\140 \216\167\216\168\216\170\216\175\216\167 \216\168\216\177\216\167\219\140 \218\169\216\167\216\177 \216\168\216\167 \216\177\216\168\216\167\216\170 \217\136\216\167\216\177\216\175 \218\169\216\167\217\134\216\167\217\132 \216\177\216\168\216\167\216\170 \216\180\217\136\219\140\216\175 !\n\216\175\216\177 \216\186\219\140\216\177 \216\167\219\140\217\134 \216\181\217\136\216\177\216\170 \217\130\216\167\216\175\216\177 \216\168\217\135 \216\175\216\167\216\175\217\134 \217\129\216\177\217\133\216\167\217\134 \216\168\217\135 \216\177\216\168\216\167\216\170 \217\134\216\174\217\136\216\167\217\135\219\140\216\175 \216\168\217\136\216\175 !\n\194\187 \216\162\219\140\216\175\219\140 \218\169\216\167\217\134\216\167\217\132 : " .. Bot_Channel, 1, "html")
+        send(msg.chat_id_, msg.id_, 1, "• کاربر گرامی ، ابتدا برای کار با ربات وارد کانال ربات شوید !در غیر این صورت قادر به دادن فرمان به ربات نخواهید بود !» آیدی کانال : " .. Bot_Channel, 1, "html")
       end
       database:sadd("sayCheck_user_channel", msg.id_)
     end
@@ -835,7 +836,7 @@ local Time = function()
     local T = {time = A, date = B}
     return T
   else
-    local url, res = http.request("http://irapi.ir/time")
+    local url, res = http.request("http://irapi.ir/time/")
     if res == 200 then
       local jdat = json.decode(url)
       database:setex("GetTime", 10, url)

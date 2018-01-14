@@ -430,9 +430,9 @@ if not database:get("setnumbergp") then
 end
   print("\027[" .. color.black[1] .. ";" .. color.green[2] .. "m\n➡➡ [•• ᴄᴏɴғɪʀᴍᴇᴅ ʟɪᴄᴇɴsᴇ ° ʙʏ AsTaE °  ••]\n\027[00m")
 
-print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••ᴄʜᴀɴɴᴇʟ: @Heart_Search | ɪs sᴇɴᴅ ° ᴜᴘᴅᴇᴛᴇ ° ᴍᴏᴅʀɴ••] ▶\n\027[00m")
+print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••ᴄʜᴀɴɴᴇʟ: @SShteam | ɪs sᴇɴᴅ ° ᴜᴘᴅᴇᴛᴇ ° ᴍᴏᴅʀɴ••] ▶\n\027[00m")
 
-print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••برای دریافت اپدیت ها  به کانال ما بزنید | ᴄʜᴀɴɴᴇʟ: Heart_Search ••] ▶\n\027[00m")
+print("\027[" .. color.black[1] .. ";" .. color.white[2] .. "m\n➡➡ [••برای دریافت اپدیت ها  به کانال ما بزنید | ᴄʜᴀɴɴᴇʟ: @SShteam ••] ▶\n\027[00m")
 
 
 local is_Naji = function(msg)
@@ -1958,8 +1958,7 @@ function tdcli_update_callback(data)
         else
           sudo = "یافت نشد"
         end
-		local chats = {}
-        send(v, 0, 1, "•• تاریخ تمدید این گروه فرا رسید !\n•• لینک : " .. (database:get("bot:group:link" .. msg.chat_id_) or "تنظیم نشده") .. "\n•• شناسه گروه :  <code>" .. msg.chat_id_ .. "</code>\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n•• صاحب گروه : " .. owner .. "\n•• همکار اضافه کننده : " .. sudo .. "\n\n•• اگر میخواهید ربات گروه را ترک کند از دستور زیر استفاده کنید :\n\n••  <code>leave" .. msg.chat_id_ .. "</code>\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید :\n\n••  <code>join" .. msg.chat_id_ .. "</code>\n\n•• اگر میخواهید ربات داخل گروه اعلام کند از دستور زیر استفاده کنید :\n\n••  <code>meld" .. msg.chat_id_ .. "</code>\n\n•• •• •• •• •• •• \n\n••  اگر قصد تمدید گروه را دارید از دستورات زیر استفاده کنید : \n\n•• برای شارژ به صورت یک ماه :\n••  <code>plan1" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت سه ماه :\n••  <code>plan2" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت نامحدود :\n••  <code>plan3" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت دلخواه :\n•• <code>plan4" .. msg.chat_id_ .. "</code>", 1, "html")
+        send(v, 0, 1, "•• تاریخ تمدید این گروه فرا رسید !\n•• لینک : " .. (database:get("bot:group:link" .. msg.chat_id_) or "تنظیم نشده") .. "\n•• شناسه گروه :  <code>" .. msg.chat_id_ .. "</code>\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• صاحب گروه : " .. owner .. "\n•• همکار اضافه کننده : " .. sudo .. "\n\n•• اگر میخواهید ربات گروه را ترک کند از دستور زیر استفاده کنید :\n\n••  <code>leave" .. msg.chat_id_ .. "</code>\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید :\n\n••  <code>join" .. msg.chat_id_ .. "</code>\n\n•• اگر میخواهید ربات داخل گروه اعلام کند از دستور زیر استفاده کنید :\n\n••  <code>meld" .. msg.chat_id_ .. "</code>\n\n•• •• •• •• •• •• \n\n••  اگر قصد تمدید گروه را دارید از دستورات زیر استفاده کنید : \n\n•• برای شارژ به صورت یک ماه :\n••  <code>plan1" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت سه ماه :\n••  <code>plan2" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت نامحدود :\n••  <code>plan3" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت دلخواه :\n•• <code>plan4" .. msg.chat_id_ .. "</code>", 1, "html")
         database:setex("bot:expirepannel:" .. msg.chat_id_, 43200, true)
       end
     end
@@ -1980,8 +1979,7 @@ function tdcli_update_callback(data)
           database:del("bot:autoleave:" .. msg.chat_id_)
           chat_leave(msg.chat_id_, bot_id)
           local v = tonumber(bot_owner)
-		  local chats = {}
-          send(v, 0, 1, "••  ربات از گروه با مشخصات زیر خارج شد !\n•• نام گروه : " .. (chat and chat.title) .. "\n•• آیدی گروه : " .. msg.chat_id_, 1, "html")
+          send(v, 0, 1, "••  ربات از گروه با مشخصات زیر خارج شد !\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• آیدی گروه : " .. msg.chat_id_, 1, "html")
           database:srem("bot:groups", msg.chat_id_)
         elseif database:get("bot:enable:" .. msg.chat_id_) then
           database:del("lefting" .. msg.chat_id_)
@@ -1989,8 +1987,7 @@ function tdcli_update_callback(data)
       end
     elseif database:get("bot:charge:" .. msg.chat_id_) == "Trial" and 500 > database:ttl("bot:charge:" .. msg.chat_id_) then
       local v = tonumber(bot_owner)
-	  local chats = {}
-      send(v, 0, 1, "••  ربات از گروه با مشخصات زیر خارج شد !\n•• نام گروه : " .. (chat and chat.title) .. "\n•• آیدی گروه : " .. msg.chat_id_, 1, "html")
+      send(v, 0, 1, "••  ربات از گروه با مشخصات زیر خارج شد !\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• آیدی گروه : " .. msg.chat_id_, 1, "html")
       database:srem("bot:groups", msg.chat_id_)
       chat_leave(msg.chat_id_, bot_id)
       database:del("bot:charge:" .. msg.chat_id_)
@@ -5616,7 +5613,7 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               else
                 linkgp = "یافت نشد"
               end
-              local texti = "• درخواست پشتیبانی از یک گروه دریافت شده است !\n\n••  مشخصات فرد درخواست کننده :\n•• آیدی کاربر : " .. msg.sender_user_id_ .. "\n•• نام کاربر : " .. fname .. " " .. lname .. "\n•• یوزرنیم کاربر : " .. username .. "\n\n•• مشخصات گروه :\n•• آیدی گروه : " .. msg.chat_id_ .. "\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n•• لینک گروه :" .. linkgp .. "\n\n\n•• پیام دریافتی :\n\n" .. pmfeedback .. "\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید :\n\n••  join" .. msg.chat_id_
+              local texti = "• درخواست پشتیبانی از یک گروه دریافت شده است !\n\n••  مشخصات فرد درخواست کننده :\n•• آیدی کاربر : " .. msg.sender_user_id_ .. "\n•• نام کاربر : " .. fname .. " " .. lname .. "\n•• یوزرنیم کاربر : " .. username .. "\n\n•• مشخصات گروه :\n•• آیدی گروه : " .. msg.chat_id_ .. "\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• لینک گروه :" .. linkgp .. "\n\n\n•• پیام دریافتی :\n\n" .. pmfeedback .. "\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید :\n\n••  join" .. msg.chat_id_
               database:del("bot:feedback" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
               send(bot_owner, 0, 1, texti, 1, "html")
               if database:get("lang:gp:" .. msg.chat_id_) then
@@ -5947,14 +5944,14 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
           if database:get("lang:gp:" .. msg.chat_id_) then
             send(msg.chat_id_, msg.id_, 1, "• Bot is Now *Online* !", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "⚙️ ربات در حال خدمت رسانی میباشد ⚙️", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• ربات هم اکنون آنلاین میباشد !", 1, "md")
           end
         end
         if is_admin(msg.sender_user_id_) and idf:match("-100(%d+)") and (text:match("^[Ll]eave$") or text:match("^ترک گروه$")) then
           if database:get("lang:gp:" .. msg.chat_id_) then
             send(msg.chat_id_, msg.id_, 1, "• Bot *Leaves* This Group !", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, " ⚜️ با دستور مدیر ربات از گروه خارج میشود ⚜️", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• ربات از این گروه خارج میشود !", 1, "md")
           end
           database:srem("bot:groups", msg.chat_id_)
           chat_leave(msg.chat_id_, bot_id)
@@ -10119,14 +10116,14 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock edit has been *Activated* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "💬 ویرایش پیام ممنوع شد 🚫", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام فعال شد ! ", 1, "md")
               end
               database:set("editmsg" .. msg.chat_id_, true)
               database:del("sayedit" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock edit is *Already* Activated ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "💬 ویرایش پیام  از قبل ممنوع بود 🚫", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام از قبل فعال است ! ", 1, "md")
             end
           end
           if lockpt[2] == "cmd" or lockptf[2] == "حالت عدم جواب" then
@@ -10134,13 +10131,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Case of no answer has been *Enable* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "👤📞 حالت عدم جواب فعال شد ✅", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب فعال شد ! ", 1, "md")
               end
               database:set("bot:cmds" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Case of no answer is *Already* enable !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "👤📞 حالت عدم جواب از قبل فعال بود ✅", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب از قبل فعال است ! ", 1, "md")
             end
           end
           if lockpt[2] == "bots" or lockptf[2] == "ربات" then
@@ -10148,13 +10145,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock bots has been *Activated* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "🤖 ورود ربات به گروه ممنوع شد 🤖 >>>🚫", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات فعال شد ! ", 1, "md")
               end
               database:set("bot:bots:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock bots is *Already* enable ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "🤖 ورود ربات به گروه از قبل ممنوع بود 🤖 >>>🚫", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات از قبل فعال است ! ", 1, "md")
             end
           end
           if lockpt[2] == "flood" or lockptf[2] == "فلود" then
@@ -10162,13 +10159,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock flood has been *Activated* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "قفل فلود فعال شد 🎺 >>>🚫", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فلود فعال شد ! ", 1, "md")
               end
               database:set("anti-flood:" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock flood is *Already* enable ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, " قفل فلود از قبل فعال بود 🎺 >>>🚫", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فلود از قبل فعال است ! ", 1, "md")
             end
           end
           if lockpt[2] == "pin" or lockptf[2] == "سنجاق پیام" then
@@ -10176,13 +10173,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock pin has been *Activated* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "قفل سنجاق کردن پیام فعال شد 📌 >>> ✅", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام فعال شد ! ", 1, "md")
               end
               database:set("bot:pin:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock pin is *Already* enable ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "قفل سنجاق کردن پیام از فعال بود 📌 >>> ✅ ", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام از قبل فعال است ! ", 1, "md")
             end
           end
         end
@@ -11159,13 +11156,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock edit has been *Inactive* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام غیرفعال شد  ♻️>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام غیرفعال شد ! ", 1, "md")
               end
               database:del("editmsg" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock edit is *Already* inactive ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام از قبل غیرفعال است ♻️>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ویرایش پیام از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unlockpt[2] == "cmd" or unlockpts[2] == "حالت عدم جواب" then
@@ -11173,13 +11170,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Case of no answer has been *Inactive* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب غیرفعال شد !  👤📞 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:cmds" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Case of no answer is *Already* inactive ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب از قبل غیرفعال است 👤📞>>> 🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• حالت عدم جواب از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unlockpt[2] == "bots" or unlockpts[2] == "ربات" then
@@ -11187,13 +11184,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock bot has been *Inactive* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات غیرفعال شد 🤖 >>> 🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:bots:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock bots is *Already* inactive ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات از قبل غیرفعال است 🤖>>> 🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ورود ربات از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unlockpt[2] == "flood" or unlockpts[2] == "فلود" then
@@ -11201,13 +11198,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock flood has been *Inactive* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فلود غیرفعال شد  🎺>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فلود غیرفعال شد ! ", 1, "md")
               end
               database:del("anti-flood:" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock flood is *Already* inactive ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل قلود از قبل غیرفعال است 🎺 >>> 🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل قلود از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unlockpt[2] == "pin" or unlockpts[2] == "سنجاق پیام" then
@@ -11215,13 +11212,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock pin has been *Inactive* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام غیرفعال شد 📌 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:pin:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock pin is *Already* inactive !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام از قبل غیرفعال است 📌>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل سنجاق پیام از قبل غیرفعال است ! ", 1, "md")
             end
           end
         end
@@ -11513,7 +11510,7 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock all has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "فعالیت های گروه غیر فعال شد 🔕 >>> از این پس تمام پیام ها و رسانه های ارسالی حذف خواهند شد 🗑", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل گروه فعال شد !", 1, "md")
               end
               database:set("bot:muteall" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
@@ -11527,13 +11524,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock text has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] فعال شد 💬 >>> 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] فعال شد !", 1, "md")
               end
               database:set("bot:text:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock text is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] از قبل فعال است 💬 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "duplipost" or mutepts[2] == "پست تکراری" then
@@ -11541,13 +11538,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock duplicate post has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری فعال شد 📚 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری فعال شد !", 1, "md")
               end
               database:set("bot:duplipost:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock duplicate post is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری از قبل فعال است 💬 >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "inline" or mutepts[2] == "دکمه شیشه ای" then
@@ -11555,13 +11552,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock inline has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای فعال شد 📱>>> 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای فعال شد !", 1, "md")
               end
               database:set("bot:inline:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock inline is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ایی از قبل فعال است 📱>>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ایی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "post" or mutepts[2] == "پست" then
@@ -11569,13 +11566,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock post has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل پست فعال شد ✉️ >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل پست فعال شد !", 1, "md")
               end
               database:set("post:lock" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock post is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل پست از قبل فعال است ✉️ >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل پست از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "photo" or mutepts[2] == "عکس" then
@@ -11583,13 +11580,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock photo has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل عکس فعال شد 🌆 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل عکس فعال شد !", 1, "md")
               end
               database:set("bot:photo:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock photo is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل عکس از قبل فعال است 🌆 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل عکس از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "spam" or mutepts[2] == "اسپم" then
@@ -11597,13 +11594,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock spam has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل اسپم فعال شد 📠 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل اسپم فعال شد !", 1, "md")
               end
               database:set("bot:spam:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock spam is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل اسپم از قبل فعال است 📠 >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل اسپم از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "video" or mutepts[2] == "فیلم" then
@@ -11611,13 +11608,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock video has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم فعال شد 🎥 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم فعال شد !", 1, "md")
               end
               database:set("bot:video:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock video is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم از قبل فعال است 🎥 >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "selfvideo" or mutepts[2] == "فیلم سلفی" then
@@ -11625,13 +11622,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock self video has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی فعال شد 👤>>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی فعال شد !", 1, "md")
               end
               database:set("bot:selfvideo:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock self video is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی از قبل فعال است 👤 >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "gif" or mutepts[2] == "گیف" then
@@ -11639,13 +11636,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock gif has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل گیف فعال شد 🎬 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل گیف فعال شد !", 1, "md")
               end
               database:set("bot:gifs:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock gif is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل گیف از قبل فعال است 🎬 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل گیف از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "music" or mutepts[2] == "موزیک" then
@@ -11653,13 +11650,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock music has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل موزیک فعال شد 🎧 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل موزیک فعال شد !", 1, "md")
               end
               database:set("bot:music:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock music is *Alraedy* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل موزیک از قبل فعال است 🎧 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل موزیک از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "voice" or mutepts[2] == "ویس" then
@@ -11667,13 +11664,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock voice has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ویس فعال شد 🔊 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ویس فعال شد !", 1, "md")
               end
               database:set("bot:voice:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock voice is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ویس از قبل فعال است 🔊 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ویس از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "links" or mutepts[2] == "لینک" then
@@ -11681,13 +11678,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock links has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل لینک فعال شد 🔗 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل لینک فعال شد ! ", 1, "md")
               end
               database:set("bot:links:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock links is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل لینک از قبل فعال است 🔗 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل لینک از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "location" or mutepts[2] == "موقعیت مکانی" then
@@ -11695,13 +11692,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock location has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی فعال شد 📍>>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی فعال شد ! ", 1, "md")
               end
               database:set("bot:location:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock location is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی از قبل فعال است 📍 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "tag" or mutepts[2] == "تگ" then
@@ -11709,13 +11706,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock tag has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل تگ (ایدی)  فعال شد  🔎>>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل تگ فعال شد ! ", 1, "md")
               end
               database:set("tags:lock" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock tag is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل تگ (ایدی) از قبل فعال است 🔎 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل تگ از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "strict" or mutepts[2] == "حالت سختگیرانه" then
@@ -11723,13 +11720,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Strict mode has been *Enable* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] فعال شد 😡 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] فعال شد ! ", 1, "md")
               end
               database:set("bot:strict" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Strict mode is *Already* enable ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] از قبل فعال است 😡>>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] از قبل فعال است ! ", 1, "md")
             end
           end
           if mutept[2] == "file" or mutepts[2] == "فایل" then
@@ -11737,13 +11734,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock file has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فایل فعال شد  💾>>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فایل فعال شد ! ", 1, "md")
               end
               database:set("bot:document:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock file is *Already* actived  !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فایل از قبل فعال است  💾>>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فایل از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "game" or mutepts[2] == "بازی" then
@@ -11751,13 +11748,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock game has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل بازی فعال شد 🎮 >>؟🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل بازی فعال شد ! ", 1, "md")
               end
               database:set("Game:lock" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock game is *Already* actived  !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل بازی از قبل فعال است 🎮 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل بازی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "hashtag" or mutepts[2] == "هشتگ" then
@@ -11765,13 +11762,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock hastag has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ   فعال شد  # >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ فعال شد ! ", 1, "md")
               end
               database:set("bot:hashtag:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock hashtag is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ از قبل فعال است # >>> 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "contact" or mutepts[2] == "مخاطب" then
@@ -11779,13 +11776,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock contact has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال مخاطب فعال شد 👤 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال مخاطب فعال شد ! ", 1, "md")
               end
               database:set("bot:contact:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock contact is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال مخاطب از قبل فعال است 👤 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال مخاطب از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "webpage" or mutepts[2] == "صفحات اینترنتی" then
@@ -11793,13 +11790,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock webpage has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی فعال شد 🖥 >>> 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی فعال شد ! ", 1, "md")
               end
               database:set("bot:webpage:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock webpage is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی از قبل فعال است 🖥 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "joinmember" or mutepts[2] == "ورود عضو" then
@@ -11807,13 +11804,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock Join Member has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو فعال شد  🚷>>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو فعال شد ! ", 1, "md")
               end
               database:set("bot:member:lock" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock Join Member is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو از قبل فعال است 🚷>>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "farsi" or mutepts[2] == "نوشتار فارسی" then
@@ -11821,13 +11818,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock farsi has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی فعال شد 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی فعال شد ! ", 1, "md")
               end
               database:set("bot:arabic:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock farsi is *Already* actived", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی از قبل فعال است 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "english" or mutepts[2] == "نوشتار انگلیسی" then
@@ -11835,13 +11832,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock english has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی فعال شد 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی فعال شد ! ", 1, "md")
               end
               database:set("bot:english:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock english is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی از قبل فعال است 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "sticker" or mutepts[2] == "استیکر" then
@@ -11849,13 +11846,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock sticker has been *Actived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل استیکر فعال شد 🎭 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل استیکر فعال شد ! ", 1, "md")
               end
               database:set("bot:sticker:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock sticker is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل استیکر از قبل فعال است 🎭 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل استیکر از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "markdown" or mutepts[2] == "مدل نشانه گذاری" then
@@ -11863,13 +11860,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock markdown has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری فعال شد 📍 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری فعال شد ! ", 1, "md")
               end
               database:set("markdown:lock" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock markdown is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری از قبل فعال است 📍 >>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "tgservice" or mutepts[2] == "سرویس تلگرام" then
@@ -11877,13 +11874,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock tgservice has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام فعال شد 🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام فعال شد ! ", 1, "md")
               end
               database:set("bot:tgservice:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock tgservice is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام از قبل فعال است 🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام از قبل فعال است !", 1, "md")
             end
           end
           if mutept[2] == "fwd" or mutepts[2] == "فروارد" then
@@ -11891,13 +11888,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock forward has been *Actived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فروارد فعال شد 📪 >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فروارد فعال شد ! ", 1, "md")
               end
               database:set("bot:forward:mute" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock forward is *Already* actived !", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فروارد از قبل فعال است 📪>>>🔒", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فروارد از قبل فعال است !", 1, "md")
             end
           end
         end
@@ -11913,14 +11910,14 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock all has been *Inactived* !", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "فعالیت های گروه  فعال شد 🔔 >>> گروه به حالت عادی برگشت ✔️", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل گروه غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:muteall" .. msg.chat_id_)
               database:set("bot:gtime:say" .. msg.chat_id_, true)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock all is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل گروه از قبل غیرفعال است 💭 >>>🔔", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل گروه از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "text" or unmutepts[2] == "متن" then
@@ -11928,13 +11925,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock text has been *Inactived* ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] غیرفعال شد 💬>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:text:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock text is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] از قبل غیرفعال است 💬>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل متن [ چت ] از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "photo" or unmutepts[2] == "عکس" then
@@ -11942,13 +11939,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock photo has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل عکس غیرفعال شد 🌆 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل عکس غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:photo:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock photo is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل عکس از قبل غیرفعال است 🌆>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل عکس از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "duplipost" or unmutepts[2] == "پست تکراری" then
@@ -11956,13 +11953,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock duplicate post has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری غیرفعال شد 📠 >>> 🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:duplipost:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock duplicate post is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری از قبل غیرفعال است 📠>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل پست تکراری از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "spam" or unmutepts[2] == "اسپم" then
@@ -11970,13 +11967,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock spam has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل اسپم غیرفعال شد 💬 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل اسپم غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:spam:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock spam is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل اسپم از قبل غیرفعال است 💬>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل اسپم از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "video" or unmutepts[2] == "فیلم" then
@@ -11984,13 +11981,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock video has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم غیرفعال شد 🎥>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:video:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock video is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم از قبل غیرفعال است 🎥>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "selfvideo" or unmutepts[2] == "فیلم سلفی" then
@@ -11998,13 +11995,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock self video has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی غیرفعال شد 👤>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:selfvideo:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock self video is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی از قبل غیرفعال است 👤🎥>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فیلم سلفی از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "file" or unmutepts[2] == "فایل" then
@@ -12012,13 +12009,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock file has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فایل غیرفعال شد 💾 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فایل غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:document:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock file is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فایل از قبل غیرفعال است 💾 >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فایل از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "game" or unmutepts[2] == "بازی" then
@@ -12026,13 +12023,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock game has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل بازی غیرفعال شد 🎮>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل بازی غیرفعال شد ! ", 1, "md")
               end
               database:del("Game:lock" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock game is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل بازی از قبل غیرفعال است 🎮>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل بازی از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "inline" or unmutepts[2] == "دکمه شیشه ای" then
@@ -12040,13 +12037,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock inline has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای غیرفعال شد 📱>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:inline:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock inline is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای از قبل غیرفعال است 📱 >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل دکمه شیشه ای از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "post" or unmutepts[2] == "پست" then
@@ -12054,13 +12051,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock post has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل پست غیرفعال شد ✉️>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل پست غیرفعال شد ! ", 1, "md")
               end
               database:del("post:lock" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock post is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل پست از قبل غیرفعال است ✉️>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل پست از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "markdown" or unmutepts[2] == "مدل نشانه گذاری" then
@@ -12068,13 +12065,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock markdown has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری غیرفعال شد 📍 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری غیرفعال شد ! ", 1, "md")
               end
               database:del("markdown:lock" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock markdown is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری از قبل غیرفعال است 📍>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل مدل نشانه گذاری از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "gif" or unmutepts[2] == "گیف" then
@@ -12082,13 +12079,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock gif has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل گیف غیرفعال شد >>> 🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل گیف غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:gifs:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock gif is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل گیف از قبل غیرفعال است >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل گیف از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "music" or unmutepts[2] == "موزیک" then
@@ -12096,13 +12093,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock music has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل موزیک غیرفعال شد 🎧>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل موزیک غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:music:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock music is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل موزیک از قبل غیرفعال است 🎧>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل موزیک از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "voice" or unmutepts[2] == "ویس" then
@@ -12110,13 +12107,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock voice has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ویس غیرفعال شد🔊>>>🔓 ", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ویس غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:voice:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock voice is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ویس از قبل غیرفعال است 🔊>>>🔓 ", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ویس از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "links" or unmutepts[2] == "لینک" then
@@ -12124,13 +12121,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock links has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل لینک غیرفعال شد 🔗>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل لینک غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:links:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock link is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل لینک از قبل غیرفعال است 🔗>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل لینک از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "location" or unmutepts[2] == "موقعیت مکانی" then
@@ -12138,13 +12135,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock location has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی غیرفعال شد 📍>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:location:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock location is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی از قبل غیرفعال است 📍>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل موقعیت مکانی از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "tag" or unmutepts[2] == "تگ" then
@@ -12152,13 +12149,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock tag has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل تگ (ایدی) غیرفعال شد 📪>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل تگ غیرفعال شد ! ", 1, "md")
               end
               database:del("tags:lock" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock tag is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل تگ از قبل غیرفعال است  📪>>>🔓🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل تگ از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "strict" or unmutepts[2] == "حالت سختگیرانه" then
@@ -12166,13 +12163,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Strict mode has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] غیرفعال شد 😡 >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:strict" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Strict mode is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] از قبل غیرفعال است 😡>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• حالت [ سختگیرانه ] از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "hashtag" or unmutepts[2] == "هشتگ" then
@@ -12180,13 +12177,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock hashtag has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ غیرفعال شد #>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:hashtag:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock hashtag is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ از قبل غیرفعال است #>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل هشتگ از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "contact" or unmutepts[2] == "مخاطب" then
@@ -12194,13 +12191,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock contact has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل مخاطب غیرفعال شد 👤>>>🔓 ", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل مخاطب غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:contact:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock contact is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, " • قفل ارسال مخاطب از قبل غیرفعال است 👤>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, " • قفل ارسال مخاطب از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "webpage" or unmutepts[2] == "صفحات اینترنتی" then
@@ -12208,13 +12205,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock webpage has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی غیرفعال شد 🖥>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:webpage:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock webpage is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی از قبل غیرفعال است 🖥>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ارسال صفحه اینترنتی از قبل غیرفعال است !", 1, "md")
             end
           end
           if unmutept[2] == "farsi" or unmutepts[2] == "نوشتار فارسی" then
@@ -12222,13 +12219,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock farsi has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی غیرفعال شد >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:arabic:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock farsi is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی از قبل غیرفعال است >>>🔓 ", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار فارسی از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "joinmember" or unmutepts[2] == "ورود عضو" then
@@ -12236,13 +12233,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock Join Member has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو غیرفعال شد 👤>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:member:lock" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock Join Member is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو از قبل غیرفعال است 👤>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل ورود عضو از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "english" or unmutepts[2] == "نوشتار انگلیسی" then
@@ -12250,13 +12247,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock english has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی غیرفعال شد >>>🔒", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:english:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock english is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی از قبل غیرفعال است >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل نوشتار انگلیسی از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "tgservice" or unmutepts[2] == "سرویس تلگرام" then
@@ -12264,13 +12261,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock tgservice has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام غیرفعال شد 🖥>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:tgservice:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "Lock tgservice is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام از قبل غیرفعال است >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل سرویس تلگرام از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "sticker" or unmutepts[2] == "استیکر" then
@@ -12278,13 +12275,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock sticker has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل استیکر غیرفعال شد >>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل استیکر غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:sticker:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock sticker is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل استیکر از قبل غیرفعال است >>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل استیکر از قبل غیرفعال است ! ", 1, "md")
             end
           end
           if unmutept[2] == "fwd" or unmutepts[2] == "فروارد" then
@@ -12292,13 +12289,13 @@ If You No Longer Want To Filter a Word, Send The /done Command !]], 1, "md")
               if database:get("lang:gp:" .. msg.chat_id_) then
                 send(msg.chat_id_, msg.id_, 1, "• Lock forward has been *Inactived* ! ", 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• قفل فروارد غیرفعال شد 📪>>>🔓", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• قفل فروارد غیرفعال شد ! ", 1, "md")
               end
               database:del("bot:forward:mute" .. msg.chat_id_)
             elseif database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Lock forward is *Already* inactived ! ", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "• قفل فروارد از قبل غیرفعال است 📪>>>🔓", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "• قفل فروارد از قبل غیرفعال است ! ", 1, "md")
             end
           end
         end
@@ -12610,44 +12607,44 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and (text:match("^[Ss]ettings") or text:match("^تنظیمات")) and check_user_channel(msg) then
           if database:get("bot:muteall" .. msg.chat_id_) then
-            mute_all = "✅"
+            mute_all = "فعال"
           else
-            mute_all = "❌"
+            mute_all = "غیرفعال"
           end
           if database:get("bot:text:mute" .. msg.chat_id_) then
-            mute_text = "✅"
+            mute_text = "فعال"
           else
-            mute_text = "❌"
+            mute_text = "غیرفعال"
           end
           if database:get("bot:photo:mute" .. msg.chat_id_) then
-            mute_photo = "✅"
+            mute_photo = "فعال"
           else
-            mute_photo = "❌"
+            mute_photo = "غیرفعال"
           end
           if database:get("bot:video:mute" .. msg.chat_id_) then
-            mute_video = "✅"
+            mute_video = "فعال"
           else
-            mute_video = "❌"
+            mute_video = "غیرفعال"
           end
           if database:get("bot:selfvideo:mute" .. msg.chat_id_) then
-            mute_selfvideo = "✅"
+            mute_selfvideo = "فعال"
           else
-            mute_selfvideo = "❌"
+            mute_selfvideo = "غیرفعال"
           end
           if database:get("bot:gifs:mute" .. msg.chat_id_) then
-            mute_gifs = "✅"
+            mute_gifs = "فعال"
           else
-            mute_gifs = "❌"
+            mute_gifs = "غیرفعال"
           end
           if database:get("anti-flood:" .. msg.chat_id_) then
-            mute_flood = "✅"
+            mute_flood = "فعال"
           else
-            mute_flood = "❌"
+            mute_flood = "غیرفعال"
           end
           if database:get("bot:muteall:Time" .. msg.chat_id_) then
-            auto_lock = "✅"
+            auto_lock = "فعال"
           else
-            auto_lock = "❌"
+            auto_lock = "غیرفعال"
           end
           if not database:get("flood:max:" .. msg.chat_id_) then
             flood_m = 5
@@ -12679,139 +12676,139 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
             warnstatus = "بی صدا"
           end
           if database:get("bot:music:mute" .. msg.chat_id_) then
-            mute_music = "✅"
+            mute_music = "فعال"
           else
-            mute_music = "❌"
+            mute_music = "غیرفعال"
           end
           if database:get("bot:bots:mute" .. msg.chat_id_) then
-            mute_bots = "✅"
+            mute_bots = "فعال"
           else
-            mute_bots = "❌"
+            mute_bots = "غیرفعال"
           end
           if database:get("bot:duplipost:mute" .. msg.chat_id_) then
-            duplipost = "✅"
+            duplipost = "فعال"
           else
-            duplipost = "❌"
+            duplipost = "غیرفعال"
           end
           if database:get("bot:member:lock" .. msg.chat_id_) then
-            member = "✅"
+            member = "فعال"
           else
-            member = "❌"
+            member = "غیرفعال"
           end
           if database:get("bot:inline:mute" .. msg.chat_id_) then
-            mute_in = "✅"
+            mute_in = "فعال"
           else
-            mute_in = "❌"
+            mute_in = "غیرفعال"
           end
           if database:get("bot:cmds" .. msg.chat_id_) then
-            mute_cmd = "✅"
+            mute_cmd = "فعال"
           else
-            mute_cmd = "❌"
+            mute_cmd = "غیرفعال"
           end
           if database:get("bot:voice:mute" .. msg.chat_id_) then
-            mute_voice = "✅"
+            mute_voice = "فعال"
           else
-            mute_voice = "❌"
+            mute_voice = "غیرفعال"
           end
           if database:get("editmsg" .. msg.chat_id_) then
-            mute_edit = "✅"
+            mute_edit = "فعال"
           else
-            mute_edit = "❌"
+            mute_edit = "غیرفعال"
           end
           if database:get("bot:links:mute" .. msg.chat_id_) then
-            mute_links = "✅"
+            mute_links = "فعال"
           else
-            mute_links = "❌"
+            mute_links = "غیرفعال"
           end
           if database:get("bot:pin:mute" .. msg.chat_id_) then
-            lock_pin = "✅"
+            lock_pin = "فعال"
           else
-            lock_pin = "❌"
+            lock_pin = "غیرفعال"
           end
           if database:get("bot:sticker:mute" .. msg.chat_id_) then
-            lock_sticker = "✅"
+            lock_sticker = "فعال"
           else
-            lock_sticker = "❌"
+            lock_sticker = "غیرفعال"
           end
           if database:get("bot:tgservice:mute" .. msg.chat_id_) then
-            lock_tgservice = "✅"
+            lock_tgservice = "فعال"
           else
-            lock_tgservice = "❌"
+            lock_tgservice = "غیرفعال"
           end
           if database:get("bot:webpage:mute" .. msg.chat_id_) then
-            lock_wp = "✅"
+            lock_wp = "فعال"
           else
-            lock_wp = "❌"
+            lock_wp = "غیرفعال"
           end
           if database:get("bot:strict" .. msg.chat_id_) then
-            strict = "✅"
+            strict = "فعال"
           else
-            strict = "❌"
+            strict = "غیرفعال"
           end
           if database:get("bot:hashtag:mute" .. msg.chat_id_) then
-            lock_htag = "✅"
+            lock_htag = "فعال"
           else
-            lock_htag = "❌"
+            lock_htag = "غیرفعال"
           end
           if database:get("tags:lock" .. msg.chat_id_) then
-            lock_tag = "✅"
+            lock_tag = "فعال"
           else
-            lock_tag = "❌"
+            lock_tag = "غیرفعال"
           end
           if database:get("bot:location:mute" .. msg.chat_id_) then
-            lock_location = "✅"
+            lock_location = "فعال"
           else
-            lock_location = "❌"
+            lock_location = "غیرفعال"
           end
           if database:get("bot:contact:mute" .. msg.chat_id_) then
-            lock_contact = "✅"
+            lock_contact = "فعال"
           else
-            lock_contact = "❌"
+            lock_contact = "غیرفعال"
           end
           if database:get("bot:english:mute" .. msg.chat_id_) then
-            lock_english = "✅"
+            lock_english = "فعال"
           else
-            lock_english = "❌"
+            lock_english = "غیرفعال"
           end
           if database:get("bot:arabic:mute" .. msg.chat_id_) then
-            lock_arabic = "✅"
+            lock_arabic = "فعال"
           else
-            lock_arabic = "❌"
+            lock_arabic = "غیرفعال"
           end
           if database:get("bot:forward:mute" .. msg.chat_id_) then
-            lock_forward = "✅"
+            lock_forward = "فعال"
           else
-            lock_forward = "❌"
+            lock_forward = "غیرفعال"
           end
           if database:get("bot:document:mute" .. msg.chat_id_) then
-            lock_file = "✅"
+            lock_file = "فعال"
           else
-            lock_file = "❌"
+            lock_file = "غیرفعال"
           end
           if database:get("markdown:lock" .. msg.chat_id_) then
-            markdown = "✅"
+            markdown = "فعال"
           else
-            markdown = "❌"
+            markdown = "غیرفعال"
           end
           if database:get("Game:lock" .. msg.chat_id_) then
-            game = "✅"
+            game = "فعال"
           else
-            game = "❌"
+            game = "غیرفعال"
           end
           if database:get("bot:spam:mute" .. msg.chat_id_) then
-            lock_spam = "✅"
+            lock_spam = "فعال"
           else
-            lock_spam = "❌"
+            lock_spam = "غیرفعال"
           end
           if database:get("post:lock" .. msg.chat_id_) then
-            post = "✅"
+            post = "فعال"
           else
-            post = "❌"
+            post = "غیرفعال"
           end
           if database:get("bot:welcome" .. msg.chat_id_) then
-            send_welcome = "✅"
+            send_welcome = "فعال"
           else
-            send_welcome = "❌"
+            send_welcome = "غیرفعال"
           end
           local TXTFA = "•• تنظیمات گروه :\n\n" .. " ••  حالت های گروه :\n\n" .. "• حالت سختگیرانه : " .. strict .. "\n" .. "______________________\n" .. "• حالت قفل کلی گروه : " .. mute_all .. "\n" .. "______________________\n" .. "• حالت عدم جواب : " .. mute_cmd .. "\n" .. "______________________\n" .. "• حالت قفل خودکار : " .. auto_lock .. "\n" .. "______________________\n" .. "••  قفل های اصلی :\n\n" .. "• قفل اسپم : " .. lock_spam .. "\n" .. "______________________\n" .. "• قفل لینک : " .. mute_links .. "\n" .. "______________________\n" .. "• قفل آدرس اینترنتی :  " .. lock_wp .. "\n" .. "______________________\n" .. "• قفل تگ (@) : " .. lock_tag .. "\n" .. "______________________\n" .. "• قفل هشتگ (#) : " .. lock_htag .. "\n" .. "______________________\n" .. "• قفل فروارد : " .. lock_forward .. "\n" .. "______________________\n" .. "• قفل پست تکراری : " .. duplipost .. "\n" .. "______________________\n" .. "• قفل ورود ربات :  " .. mute_bots .. "\n" .. "______________________\n" .. "• قفل ویرایش پیام :  " .. mute_edit .. "\n" .. "______________________\n" .. "• قفل سنجاق پیام : " .. lock_pin .. "\n" .. "______________________\n" .. "• قفل دکمه شیشه ایی : " .. mute_in .. "\n" .. "______________________\n" .. "• قفل نوشتار فارسی :  " .. lock_arabic .. "\n" .. "______________________\n" .. "• قفل نوشتار انگلیسی : " .. lock_english .. "\n" .. "______________________\n" .. "• قفل مدل نشانه گذاری : " .. markdown .. "\n" .. "______________________\n" .. "• قفل پست : " .. post .. "\n" .. "______________________\n" .. "• قفل بازی : " .. game .. "\n" .. "______________________\n" .. "• قفل ورود عضو : " .. member .. "\n" .. "______________________\n" .. "• قفل سرویس تلگرام : " .. lock_tgservice .. "\n" .. "______________________\n" .. "• قفل فلود : " .. mute_flood .. "\n" .. "______________________\n" .. "• وضعیت فلود : " .. floodstatus .. "\n" .. "______________________\n" .. "• حساسیت فلود : [ " .. flood_m .. " ]\n" .. "______________________\n" .. "• وضعیت اخطار : " .. warnstatus .. "\n" .. "______________________\n" .. "• تعداد دفعات اخطار : [ " .. sencwarn .. " ]\n" .. "______________________\n" .. "️• حساسیت اسپم : [ " .. spam_c .. [[
  ]
@@ -12917,7 +12914,7 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
           if database:get("lang:gp:" .. msg.chat_id_) then
             send(msg.chat_id_, msg.id_, 1, "• *Bot Successfully Reloaded* !", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "• ربات مجددا راه اندازی شد >>> ♻️", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "• ربات با موفقیت بازنگری شد !", 1, "md")
           end
         end
         if is_momod(msg.sender_user_id_, msg.chat_id_) and idf:match("-100(%d+)") and (text:match("^[Pp]anel$") or text:match("^پنل$")) and check_user_channel(msg) then
@@ -13001,9 +12998,9 @@ Sentences have over `]] .. sensspam[2] .. "` Character will Delete !", 1, "md")
             end
           end
           if database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "•• *Status Group* : \n\n• *Group Name* : " .. (chat and chat.title_ or "") .. "\n\n• *Credit*  : `" .. chargeen .. "`\n\n• *Panel Type* : `" .. panelen .. "`\n\n• *Auto-lock Status* : " .. AutolockEn .. "\n\n• *Show ID Status* : `" .. showiden .. "`\n\n• *Show Profile Status* : `" .. showproen .. "`\n\n• *Show Phone Number Status* : `" .. showconten .. "`\n\n• *Show Edit Status* : `" .. say_editen .. "`", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "•• *Status Group* : \n\n• *Group Name* : " .. (chat and chat.title_ or "---") .. "\n\n• *Credit*  : `" .. chargeen .. "`\n\n• *Panel Type* : `" .. panelen .. "`\n\n• *Auto-lock Status* : " .. AutolockEn .. "\n\n• *Show ID Status* : `" .. showiden .. "`\n\n• *Show Profile Status* : `" .. showproen .. "`\n\n• *Show Phone Number Status* : `" .. showconten .. "`\n\n• *Show Edit Status* : `" .. say_editen .. "`", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "•• وضعیت گروه : \n\n• نام گروه : " .. (chat and chat.title_ or "") .. "\n\n• اعتبار  : " .. chargefa .. "\n\n• نوع پنل : " .. panelfa .. "\n\n• وضعیت قفل خودکار : " .. AutolockFa .. "\n\n• حالت نمایش شناسه : " .. showidfa .. "\n\n• وضعیت نمایش پروفایل : " .. showprofa .. "\n\n• وضعیت نمایش شماره تلفن : " .. showcontfa .. "\n\n• وضعیت نمایش پیام ادیت شده : " .. say_editfa, 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "•• وضعیت گروه : \n\n• نام گروه : " .. (chat and chat.title_ or "---") .. "\n\n• اعتبار  : " .. chargefa .. "\n\n• نوع پنل : " .. panelfa .. "\n\n• وضعیت قفل خودکار : " .. AutolockFa .. "\n\n• حالت نمایش شناسه : " .. showidfa .. "\n\n• وضعیت نمایش پروفایل : " .. showprofa .. "\n\n• وضعیت نمایش شماره تلفن : " .. showcontfa .. "\n\n• وضعیت نمایش پیام ادیت شده : " .. say_editfa, 1, "md")
           end
         end
         if database:get("warnstatus" .. msg.chat_id_) == "Muteuser" then
@@ -13332,7 +13329,7 @@ All your *Warnings* Has Been Cleared !]], 1, "md")
         if is_admin(msg.sender_user_id_) and idf:match("-100(%d+)") and (text:match("^[Ll]inkpv$") or text:match("^لینک پی وی$")) then
           local link = database:get("bot:group:link" .. msg.chat_id_)
           if link then
-            send(msg.sender_user_id_, 0, 1, ".. نام گروه : " .. (chat and chat.title) .. "\n.. لینک گروه :\n" .. link, 1, "html")
+            send(msg.sender_user_id_, 0, 1, ".. نام گروه : " .. (chat and chat.title_ or "---") .. "\n.. لینک گروه :\n" .. link, 1, "html")
             if database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• Group *link* has been *Sent* to your Pv !", 1, "md")
             else
@@ -13459,7 +13456,7 @@ All your *Warnings* Has Been Cleared !]], 1, "md")
                 local name = fname .. " " .. lname
                 local suser = "@" .. result.username_ or "ندارد"
                 local v = tonumber(bot_owner)
-                send(v, 0, 1, "•• گروهی به مدت " .. a[2] .. " روز شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
+                send(v, 0, 1, "•• گروهی به مدت " .. a[2] .. " روز شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
               end
               getUser(msg.sender_user_id_, send_to_bot_owner_charge)
             end
@@ -13478,7 +13475,7 @@ All your *Warnings* Has Been Cleared !]], 1, "md")
             local lname = result.last_name_ or ""
             local name = fname .. " " .. lname
             local suser = "@" .. result.username_ or "ندارد"
-            send(v, 0, 1, "•• گروهی به صورت نامحدود شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
+            send(v, 0, 1, "•• گروهی به صورت نامحدود شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
             database:set("bot:charge:" .. msg.chat_id_, true)
             database:set("bot:enable:" .. msg.chat_id_, true)
           end
@@ -13496,7 +13493,7 @@ All your *Warnings* Has Been Cleared !]], 1, "md")
             local lname = result.last_name_ or ""
             local name = fname .. " " .. lname
             local suser = "@" .. result.username_ or "ندارد"
-            send(v, 0, 1, "•• گروهی به صورت آزمایشی شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
+            send(v, 0, 1, "•• گروهی به صورت آزمایشی شارژ شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n•• مشخصات همکار شارژ کننده :\n•• نام همکار : " .. name .. "\n•• یوزرنیم همکار : " .. suser .. "\n\n\n•• مشخصات گروه :\n•• نام گروه : " .. (chat and chat.title_ or "---") .. "\n•• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>", 1, "html")
             database:setex("bot:charge:" .. msg.chat_id_, 22100, "Trial")
             database:set("bot:enable:" .. msg.chat_id_, true)
           end
@@ -13705,12 +13702,12 @@ Credit : *]] .. d .. "* Days !", 1, "md")
 Please *specify* the group and the group reputation !
 If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md")
               else
-                send(msg.chat_id_, msg.id_, 1, "• گروه " .. (chat and chat.title_ or "") .. "تحت حمایت ربات قرار گرفت ✅", 1, "md")
+                send(msg.chat_id_, msg.id_, 1, "• گروه " .. (chat and chat.title_ or "") .. " به لیست مدیریتی ربات اضافه شد !\nلطفا صاحب گروه و میزان اعتبار گروه را تعیین نمایید !\n درصورت تمایل به دریافت شماره ربات ، دستور *Botphone* را ارسال نمایید .", 1, "md")
               end
               local fname = result.first_name_ or ""
               local lname = result.last_name_ or ""
               local username = "@" .. result.username_ or "ندارد"
-              send(bot_owner, 0, 1, "• گروه جدیدی به لیست مدیریتی ربات اضافه شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n••  مشخصات همکار اضافه کننده :\n•• آیدی همکار : <code>" .. msg.sender_user_id_ .. "</code>\n•• نام همکار : " .. fname .. " " .. lname .. "\n•• یوزرنیم همکار : " .. username .. "\n\n•• مشخصات گروه :\n••  آیدی گروه : <code>" .. msg.chat_id_ .. "</code>\n•• نام گروه : " .. (chat and chat.title_ or "") .. "\n\n•• اگر میخواهید ربات گروه را ترک کند از دستور زیر استفاده کنید : \n\n••  <code>leave" .. msg.chat_id_ .. "</code>\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید : \n\n••  <code>join" .. msg.chat_id_ .. "</code>\n\n•• •• •• •• •• •• \n\n••  اگر قصد تمدید گروه را دارید از دستورات زیر استفاده کنید : \n\n•• برای شارژ به صورت یک ماه :\n••  <code>plan1" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت سه ماه :\n••  <code>plan2" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت نامحدود :\n••  <code>plan3" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت دلخواه :\n•• <code>plan4" .. msg.chat_id_ .. "</code>", 1, "html")
+              send(bot_owner, 0, 1, "• گروه جدیدی به لیست مدیریتی ربات اضافه شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n••  مشخصات همکار اضافه کننده :\n•• آیدی همکار : <code>" .. msg.sender_user_id_ .. "</code>\n•• نام همکار : " .. fname .. " " .. lname .. "\n•• یوزرنیم همکار : " .. username .. "\n\n•• مشخصات گروه :\n••  آیدی گروه : <code>" .. msg.chat_id_ .. "</code>\n•• نام گروه : " .. (chat and chat.title_ or "----") .. "\n\n•• اگر میخواهید ربات گروه را ترک کند از دستور زیر استفاده کنید : \n\n••  <code>leave" .. msg.chat_id_ .. "</code>\n\n•• اگر قصد وارد شدن به گروه را دارید از دستور زیر استفاده کنید : \n\n••  <code>join" .. msg.chat_id_ .. "</code>\n\n•• •• •• •• •• •• \n\n••  اگر قصد تمدید گروه را دارید از دستورات زیر استفاده کنید : \n\n•• برای شارژ به صورت یک ماه :\n••  <code>plan1" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت سه ماه :\n••  <code>plan2" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت نامحدود :\n••  <code>plan3" .. msg.chat_id_ .. "</code>\n\n•• برای شارژ به صورت دلخواه :\n•• <code>plan4" .. msg.chat_id_ .. "</code>", 1, "html")
               database:set("bot:enable:" .. msg.chat_id_, true)
               database:setex("bot:charge:" .. msg.chat_id_, 2 * day, true)
               database:sadd("sudo:data:" .. msg.sender_user_id_, msg.chat_id_)
@@ -13770,7 +13767,7 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
               local fname = result.first_name_ or ""
               local lname = result.last_name_ or ""
               local username = "@" .. result.username_ or "ندارد"
-              send(v, 0, 1, "••  گروهی با مشخصات زیر از لیست مدیریتی حذف شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n •• مشخصات همکار حذف کننده : \n •• نام همکار : " .. fname .. " " .. lname .. "\n •• یوزرنیم همکار : " .. username .. "\n\n\n •• مشخصات گروه :\n •• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>\n •• نام گروه : " .. (chat and chat.title_ or ""), 1, "html")
+              send(v, 0, 1, "••  گروهی با مشخصات زیر از لیست مدیریتی حذف شد !\n\n•• تاریخ : " .. Time().date .. "\n•• ساعت : " .. Time().time .. "\n\n •• مشخصات همکار حذف کننده : \n •• نام همکار : " .. fname .. " " .. lname .. "\n •• یوزرنیم همکار : " .. username .. "\n\n\n •• مشخصات گروه :\n •• آیدی گروه : <code>" .. msg.chat_id_ .. "</code>\n •• نام گروه : " .. (chat and chat.title_ or "---"), 1, "html")
             end
             getUser(msg.sender_user_id_, send_to_bot_owner)
           end
@@ -14970,13 +14967,13 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
         end
         if is_leader(msg) and (text:match("^[Uu]pdate$") or text:match("^بروزرسانی$")) then
           if not database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "برای اطلاع از اپدیت های بعدی به کانال ما سر بزنید 😊 >>> @Heart_Search", 1,"md")
+            send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط senator می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @Zeusbotsupport", 1,"md")
           else
-            send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'Rick'_\n_Check out this Channel for updates :_ @", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'senator'_\n_Check out this Channel for updates :_ @Zeusbotsupport", 1, "md")
           end
         end
         if is_leader(msg) and (text:match("^[Vv]ersion$") or text:match("^نسخه فعلی$")) then
-          local LastVer = "Naji .Ver"
+          local LastVer = "zeus v2"
           if LastVer then
             if not database:get("lang:gp:" .. msg.chat_id_) then
               send(msg.chat_id_, msg.id_, 1, "• نسخه فعلی سورس " .. LastVer .. " میباشد !", 1, "md")
@@ -15268,9 +15265,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
         end
         if is_Naji(msg) and text:match("^[Ww]hat[Ss]ource$") then
           if database:get("lang:gp:" .. msg.chat_id_) then
-            send(msg.chat_id_, msg.id_, 1, "》 *ESET Nod 32 Source v4.1*\n\n》 *Created on December 2016*\n\n》 *By* : *ESET TEAM* \n\n》 *Developer* :\n\n • Sajjad Momen\n\n  *Cracked By Rick*", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "》 *zeus v2*\n\n》 *Created on December 2017*\n\n》 *By* : *ESET TEAM* \n\n》 *Developer* :\n\n • sudo senator\n\n  *Cracked By senator*", 1, "md")
           else
-            send(msg.chat_id_, msg.id_, 1, "》  ایسِت نود 32 سورس ورژن 4.1 \n》 پایه گذاری شده در دی ماه ۱۳۹۵ \n》 توسط : *ESET TEAM* \n\n》 توسعه دهنده :\n\n • سجاد مومن  • @EndlessLine\n\n  Rick", 1, "md")
+            send(msg.chat_id_, msg.id_, 1, "》 zeus v2 \n》 پایه گذاری شده در خرداد ماه 1396 \n》 توسط : *zeus bot* \n\n》 توسعه دهنده :\n\n • sudo senator  • @Zeusbotsupport\n\nاپن شده توسط senator", 1, "md")
           end
         end
         if is_Naji(msg) and text:match("^[Ii]nfo$") then
@@ -15278,9 +15275,9 @@ If you *want* to get the bot phone number , send command *Botphone* .]], 1, "md"
 
           if is_leader(msg) and text:match("^[Ff]orceupdate$") then
             if not database:get("lang:gp:" .. msg.chat_id_) then
-              send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط ناجی می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @Heart_Search", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "*•نسخه مورد استفاده شما تهیه شده توسط senator می باشد.\nبرای اطلاع از اپدیت به این کانال مراجعه فرمایید*: @Zeusbotsupport", 1, "md")
             else
-              send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'Naji'_\n_Check out this Channel for updates :_ @Heart_Search", 1, "md")
+              send(msg.chat_id_, msg.id_, 1, "_• You are using the version provided by 'senator'_\n_Check out this Channel for updates :_ @Zeusbotsupport", 1, "md")
             end
           end
           if is_leader(msg) and text:match("^[Rr]estart$") then
